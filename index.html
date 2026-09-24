@@ -1,0 +1,64 @@
+<body>
+
+<div class="checkout-container">
+    <!-- 商品摘要區 -->
+    <div class="section-title">商品摘要</div>
+    <div class="order-summary">
+        <!-- 這裡的圖片網址是示意圖，之後可以換成您自己的香氛產品圖 -->
+        <img class="product-thumb" src="https://sanshiliangke32g.com" alt="Product">
+        <div class="product-info">
+            <h3 class="product-name">Rain of temple (線香)</h3>
+            <span class="product-price">$18.00 (約 NT$540)</span>
+        </div>
+    </div>
+
+    <!-- 運送方式區 -->
+    <div class="section-title">運送方式</div>
+    <div class="option-group">
+        <label class="option-label">
+            <input type="radio" name="shipping" value="cvs" checked onclick="updateTotal(60)">
+            7-ELEVEN / 全家 超商取貨 (運費 NT$60)
+        </label>
+    </div>
+    <div style="font-size: 12px; color: #666; padding-left: 12px; margin-top: -5px;">
+        ※ 點擊下方按鈕下單後，將會引導您填寫取貨超商門市。
+    </div>
+
+    <!-- 付款方式區 -->
+    <div class="section-title">付款方式</div>
+    <div class="option-group">
+        <label class="option-label">
+            <input type="radio" name="payment" value="bank" checked>
+            本地銀行轉帳 / ATM 簡單匯款 (免手續費)
+        </label>
+    </div>
+
+    <!-- 費用明細區 -->
+    <div class="total-box">
+        <div class="total-row">
+            <span>商品小計</span>
+            <span>NT$ 540</span>
+        </div>
+        <div class="total-row">
+            <span>超商運費</span>
+            <span id="shipping-fee">NT$ 60</span>
+        </div>
+        <div class="total-row grand-total" style="margin-top: 10px;">
+            <span>下單應付總計</span>
+            <span id="grand-total">NT$ 600</span>
+        </div>
+    </div>
+
+    <!-- 提交按鈕：之後可以把這個網址換成您做好的 Google 表單連結 -->
+    <button class="btn-submit" onclick="location.href='https://google.com'">確認下單並填寫門市</button>
+</div>
+
+<script>
+    // 自動計算總金額的小機關
+    function updateTotal(shippingCost) {
+        document.getElementById('shipping-fee').innerText = 'NT$ ' + shippingCost;
+        document.getElementById('grand-total').innerText = 'NT$ ' + (540 + shippingCost);
+    }
+</script>
+</body>
+</html>
