@@ -1,11 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>極簡結帳頁面 - 三什兩克</title>
+    <style>
+        body {
+            font-family: "serif", "Noto Serif TC", sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .checkout-container {
+            max-width: 450px;
+            width: 100%;
+        }
+        .section-title {
+            font-size: 16px;
+            letter-spacing: 1px;
+            margin: 30px 0 15px 0;
+            text-transform: uppercase;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 8px;
+        }
+        .order-summary {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 15px 0;
+        }
+        .product-thumb {
+            width: 80px;
+            height: 80px;
+            background-color: #f7f7f7;
+            object-fit: contain;
+        }
+        .product-info {
+            flex-grow: 1;
+        }
+        .product-name {
+            font-size: 15px;
+            margin: 0 0 5px 0;
+        }
+        .product-price {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .option-group {
+            margin-bottom: 15px;
+        }
+        .option-label {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            border: 1px solid #e5e5e5;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        .option-label input {
+            margin-right: 12px;
+        }
+        .option-label:hover {
+            border-color: #1a1a1a;
+        }
+        .total-box {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #1a1a1a;
+        }
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        .grand-total {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .btn-submit {
+            width: 100%;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            border: none;
+            padding: 15px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-top: 25px;
+            cursor: pointer;
+        }
+        .btn-submit:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
 <body>
 
 <div class="checkout-container">
     <!-- 商品摘要區 -->
     <div class="section-title">商品摘要</div>
     <div class="order-summary">
-        <!-- 這裡的圖片網址是示意圖，之後可以換成您自己的香氛產品圖 -->
-        " alt="Product">
+        <!-- 這裡已經幫您精確換成您的商品照片檔名了 -->
         <img class="product-thumb" src="Polish_20260923_151622580~2.jpg" alt="Product">
         <div class="product-info">
             <h3 class="product-name">Rain of temple (線香)</h3>
@@ -50,16 +149,6 @@
         </div>
     </div>
 
-    <!-- 提交按鈕：之後可以把這個網址換成您做好的 Google 表單連結 -->
-    <button class="btn-submit" onclick="location.href='https://google.com'">確認下單並填寫門市</button>
-</div>
-
-<script>
-    // 自動計算總金額的小機關
-    function updateTotal(shippingCost) {
-        document.getElementById('shipping-fee').innerText = 'NT$ ' + shippingCost;
-        document.getElementById('grand-total').innerText = 'NT$ ' + (540 + shippingCost);
-    }
-</script>
-</body>
-</html>
+    <!-- 提交按鈕：點擊後會連動到 Google 表單 -->
+    <button class="btn-submit" onclick="location.href='
+                https://google.com
